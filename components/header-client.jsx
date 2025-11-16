@@ -1,13 +1,13 @@
+"use client"
 import React from "react";
 import { Button } from "./ui/button";
 import { PenBox, LayoutDashboard } from "lucide-react";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
-import { checkUser } from "@/lib/checkUser";
+
 import Image from "next/image";
 
-const Header = async () => {
-  await checkUser();
+const HeaderClient = () => {
 
   return (
     <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
@@ -16,9 +16,9 @@ const Header = async () => {
           <Image
             src={"/logo.png"}
             alt="Welth Logo"
-            width={200}
-            height={60}
-            className="h-12 w-auto object-contain"
+            width={300}
+            height={80}
+            className="h-14 w-auto object-contain"
           />
         </Link>
 
@@ -76,4 +76,4 @@ const Header = async () => {
   );
 };
 
-export default Header;
+export default HeaderClient;
